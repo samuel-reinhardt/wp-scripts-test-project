@@ -1,0 +1,5 @@
+@use 'brand';
+
+.header {
+	background: brand.$secondary;
+}
