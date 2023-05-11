@@ -1,17 +1,19 @@
-<?php
-// untested, and not meant to work
+<?php namespace TestTheme;
 // only for demonstration of automatic versioning setup
 
-$theme_assets = include( get_stylesheet_directory() . 'build/theme.asset.php' );
-wp_register_script(
-    'theme-script',
-    get_stylesheet_directory() . 'build/theme.js',
-    array(),
-    $theme_assets['version']
-);
-wp_register_style(
-	'theme-style',
-	get_stylesheet_directory . 'build/theme.css',
-	array(),
-	$theme_assets['version']
-);
+function register_assets() {
+	[ 'version' => $version ]  = include( \get_stylesheet_directory() . '/build/theme.asset.php' );
+	wp_enqueue_script(
+		'theme-script',
+		\get_stylesheet_directory() . '/build/theme.js',
+		array(),
+		$version
+	);
+	wp_enqueue_style(
+		'theme-style',
+		\get_stylesheet_directory() . '/build/theme.css',
+		array(),
+		$version
+	);
+}
+add_action( 'wp_enqueue_scripts', 'TestTheme\register_assets' );

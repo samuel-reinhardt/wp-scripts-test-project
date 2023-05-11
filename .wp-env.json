@@ -1,0 +1,12 @@
+{
+  "core": null,
+  "phpVersion": null,
+  "plugins": [],
+  "themes": [],
+  "config": {
+    "WP_DEBUG": true
+  },
+  "mappings": {
+    "wp-content/themes": "./themes"
+  }
+}

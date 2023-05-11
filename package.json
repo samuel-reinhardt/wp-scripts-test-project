@@ -1,9 +1,13 @@
 {
   "devDependencies": {
-    "@wordpress/scripts": "^26.1.0"
+    "@wordpress/scripts": "^26.1.0",
+    "@wordpress/env": "^7.0.0"
   },
   "scripts": {
     "build": "wp-scripts build --output-path=themes/test-theme/build --config .webpack.config.mjs",
-    "start": "wp-scripts start --output-path=themes/test-theme/build --config .webpack.config.mjs"
+    "start": "wp-scripts start --output-path=themes/test-theme/build --config .webpack.config.mjs",
+    "server": "wp-env start"
+  },
+  "dependencies": {
   }
 }
